@@ -14,7 +14,11 @@ def canUnlockAll(boxes):
 
     for key in keys:
         for boxItem in boxes[key]:
-            if boxItem not in keys:
+            """
+            the 2nd condition for efficiency if we have box item
+            greater than the index of the last item in the boxes
+            """
+            if boxItem not in keys and boxItem < number_of_boxes:
                 keys.append(boxItem)
     if len(keys) == number_of_boxes:
         return True
