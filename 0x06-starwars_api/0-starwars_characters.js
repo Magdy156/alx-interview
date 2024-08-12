@@ -11,7 +11,7 @@ function sendRequest (url) {
 }
 
 async function run () {
-  if (process.argv < 3) return;
+  if (process.argv.length < 3) return;
 
   const movieUrl = 'https://swapi-api.alx-tools.com/api/films/' + process.argv[2];
   const movie = await sendRequest(movieUrl);
