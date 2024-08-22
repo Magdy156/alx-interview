@@ -3,21 +3,17 @@
 ```
 def makeChange(coins, total):
     """ Generate changes needed to reach total
-        using greedy approach
+        using using bottom to up approach
     """
     if total <= 0:
         return 0
-    check = 0
-    count = 0
-    coins.sort(reverse=True)
-    for coin in coins:
-        while check < total:
-            check += coin
-            count += 1
-        if check == total:
-            return count
-        check -= coin
-        count -= 1
-    return -1
+    arr = [float('inf')] * (total + 1)
+    arr[0] = 0
 
+    for i in range(1, total + 1):
+        for coin in coins:
+            if coin <= i:
+                arr[i] = min(arr[i], arr[i - coin] + 1)
+
+    return arr[total] if arr[total] != float('inf') else -1
 ```
