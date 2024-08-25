@@ -52,6 +52,8 @@ def main():
         if count % 10 == 0:
             printOutput(log_after_parse)
 
+    printOutput(log)
+
 
 if __name__ == "__main__":
     main()
