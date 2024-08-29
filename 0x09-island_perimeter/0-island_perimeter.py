@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+""" island perimeter module """
+
 
 def island_perimeter(grid):
     """ returns the periemter of an island """
